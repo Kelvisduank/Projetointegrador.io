@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden; /* Evita barras de rolagem indesejadas */
+}
+
+.background {
+    background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fG11c2ljJTIwYmFja3Byb3VuZHN8ZW58MHx8fHwxNjg0MzU4MDg5&ixlib=rb-4.0.3&q=80&w=1920') no-repeat center center fixed; /* Imagem de fundo */
+    background-size: cover; /* Cobre toda a área */
+    height: 100vh; /* Altura total da janela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5); /* Camada escura para melhor legibilidade */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.container {
+    position: relative; /* Para posicionar a camada de fundo */
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Sombra intensa */
+    max-width: 600px; /* Limite de largura */
+    width: 90%; /* Largura total no celular */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transição para animação */
+}
+
+.container:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7); /* Sombra mais intensa ao passar o mouse */
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem; /* Tamanho do título */
+    margin-bottom: 10px; /* Espaçamento abaixo do título */
+    color: #e67e22; /* Cor do título */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra do texto */
+}
+
+p {
+    margin-bottom: 25px; /* Espaçamento abaixo do parágrafo */
+    color: #34495e; /* Cor do texto */
+    font-weight: 300; /* Peso da fonte mais leve */
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column; /* Alinha os botões na coluna */
+}
+
+.button {
+    background-color: #007BFF; /* Cor do botão */
+    color: #fff; /* Texto branco */
+    text-decoration: none; /* Remove sublinhado */
+    padding: 15px 20px;
+    border-radius: 25px; /* Bordas arredondadas */
+    margin: 10px 0; /* Espaçamento entre os botões */
+    font-size: 1.2rem; /* Tamanho da fonte dos botões */
+    transition: background-color 0.3s, transform 0.2s; /* Transições suaves */
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3); /* Sombra do botão */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+}
+
+footer {
+    margin-top: 30px; /* Espaçamento acima do rodapé */
+    font-size: 0.9rem; /* Tamanho da fonte do rodapé */
+    color: #7f8c8d; /* Cor do texto do rodapé */
+    position: relative;
+}
+
+footer p {
+    animation: fadeIn 1s ease-in; /* Animação de entrada para o rodapé */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
