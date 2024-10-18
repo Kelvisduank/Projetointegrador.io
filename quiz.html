@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicação do Quiz</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #6A11CB, #2575FC);
+            color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            max-width: 600px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #28A745;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo ao Quiz!</h1>
+        <p>Essa roleta foi criada com o intuito de ajudar no aprendizado da classe. fazendo uma dinamica com  a sala toda.
+           <br>
+            <b>Orientações</b>
+            <br>
+            1 - O professor deverá escolher o tema da rodada. os participantes sentarão em roda, e o professor vai girar a roleta. ao ser sorteada a letra. o aluno deve pensar em uma musica/artista com ou sem algum tema especifico. isso fica a critério do professor.
+            <br>
+            2 - o professor deve delimitar o tempo, ganha quem for a última pessoa a sair da roda.
+            <br>
+            3 - se cair a mesma letra, não pode falar algo que ja foi falado
+        </p>
+        <p>O quiz é interativo e divertido, e você pode responder quantas vezes quiser!</p>
+        <p>Clique no botão abaixo para começar sua aventura musical!</p>
+        <a href="/sorteio-valores-formato-rollete/index.html"><button id="startQuizButton">Começar o Quiz</button></a>
+    </div>
+    <div class="footer">
+        <p>Desenvolvido por 2°A/B info - 2024</p>
+    </div>
+    
+    <script>
+        document.getElementById("startQuizButton").addEventListener("click", () => {
+            alert("O quiz será iniciado em breve! Prepare-se para responder perguntas incríveis sobre músicas!");
+            // Aqui você pode redirecionar para a página do quiz
+            // window.location.href = "link-para-o-quiz.html";
+        });
+    </script>
+</body>
+</html>
