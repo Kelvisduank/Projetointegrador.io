@@ -18,6 +18,7 @@
             color: #ffffff;
             font-family: 'Arial', sans-serif;
             overflow: hidden;
+            flex-direction: column; /* Adicionado para alinhar em coluna */
         }
 
         .container {
@@ -40,6 +41,53 @@
             letter-spacing: 4px;
             color: #ffffff;
             text-shadow: 0 0 15px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .stylish-button {
+            background: linear-gradient(135deg, #3498db, #8e44ad);
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            margin-top: 40px; /* Espaço entre o texto e o botão */
+        }
+
+        .stylish-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.15);
+            transform: translate(-50%, -50%) rotate(45deg);
+            transition: width 0.5s ease, height 0.5s ease;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .stylish-button:hover::before {
+            width: 0%;
+            height: 0%;
+        }
+
+        .stylish-button:hover {
+            color: #fff;
+            background: linear-gradient(135deg, #8e44ad, #3498db);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .stylish-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         }
 
         .confetti {
@@ -80,6 +128,9 @@
     <div class="container">
         <div class="title">Você Ganhou!</div>
         <div class="subtitle">Sabe muito!</div>
+        
+        <br>
+      <a href="Index.html">  <button class="stylish-button">Voltar ao Inicio</button> </a><!-- Botão alinhado dentro do container -->
     </div>
 
     <script>
@@ -93,46 +144,37 @@
             document.body.appendChild(confetti);
         }
 
+        // Lista de músicas disponíveis
+        const musicas = [
+            'music/halloffame.mp3',
+            'music/happy-nation.mp3',
+            'music/royality.mp3',
+            'music/runaway.mp3',
+            'music/staywithme.mp3'
+        ];
 
-// Lista de músicas disponíveis
-const musicas = [
-        'music/halloffame.mp3',
-        'music/happy-nation.mp3',
-        'music/royality.mp3',
-        'music/runaway.mp3',
-        'music/staywithme.mp3'
-    ];
+        const musica = document.getElementById('musicaDeFundo');
 
-    const musica = document.getElementById('musicaDeFundo');
+        // Função para tocar uma música aleatória
+        function tocarMusicaAleatoria() {
+            // Seleciona uma música aleatória da lista
+            const musicaAleatoria = musicas[Math.floor(Math.random() * musicas.length)];
+            musica.src = musicaAleatoria; // Define o caminho da música escolhida
+            musica.play().catch(error => {
+                console.log('Autoplay bloqueado pelo navegador:', error);
+            });
+        }
 
-    // Função para tocar uma música aleatória
-    function tocarMusicaAleatoria() {
-        // Seleciona uma música aleatória da lista
-        const musicaAleatoria = musicas[Math.floor(Math.random() * musicas.length)];
-        musica.src = musicaAleatoria; // Define o caminho da música escolhida
-        musica.play().catch(error => {
-            console.log('Autoplay bloqueado pelo navegador:', error);
-        });
-    }
+        // Adiciona um evento de clique no documento para tocar a música
+        document.addEventListener('click', () => {
+            tocarMusicaAleatoria();
+        }, { once: true }); // Garante que a música só seja iniciada no primeiro clique
 
-    // Chama a função para tocar uma música aleatória ao carregar a página
-    window.addEventListener('load', () => {
-        tocarMusicaAleatoria();
-    });
-
+        setTimeout(function() {
+            location.reload();
+            window.location.href = "index.html";
+        }, 60000);
     </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-<script>
-    
-</script>
