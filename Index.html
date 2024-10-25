@@ -8,6 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    
+    <audio id="lofi" src="music/lofi.m4a" hidden></audio>
+
     <div class="background">
         <div class="overlay"></div>
         <div class="container">
@@ -25,10 +28,47 @@
             </div>
             <br>
             <a href="dev.html" class="button">👑 Quem Somos Nós?</a>
+            <br>
+            <audio id="backgroundMusic" loop autoplay muted>
+                <source src="music/lofi.m4a" type="audio/mpeg">
+                Seu navegador não suporta o elemento audio.
+            </audio>
+            <br><button class="button" onclick="toggleMute()">Ativar Som</button>
+            <button class="button" onclick="togglePlay()">Play/Pause</button>
             <footer>
                 <p>Feito com amor para todos os amantes da música! &copy; 2° Info 2024</p>
             </footer>
         </div>
     </div>
-</body>
+
+
+<script>
+        const audio = document.getElementById('backgroundMusic');
+
+// Tenta tocar o áudio automaticamente ao carregar
+window.onload = () => {
+    audio.play().catch(error => {
+        console.log("Reprodução automática falhou: ", error);
+    });
+};
+
+function togglePlay() {
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+}
+
+function toggleMute() {
+    audio.muted = !audio.muted;
+    const button = document.querySelector('button:nth-of-type(1)');
+    button.textContent = audio.muted ? 'Ativar Som' : 'Desativar Som';
+}
+        
+
+
+
+ </script>
+ </body>
 </html>
